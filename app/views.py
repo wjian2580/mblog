@@ -5,6 +5,7 @@ from app import app
 @app.route('/index')
 def index():
 	user = {'name':'Jim'}
+        title = 'my_blog'
 	posts = [
 		{
 			"author":{"name":"Sam"},
@@ -18,5 +19,5 @@ def index():
 	return render_template('index.html',
 		user=user,
 		posts=posts,
-		title='title'
+		title=title
 		)
