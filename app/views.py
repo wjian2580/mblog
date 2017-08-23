@@ -1,3 +1,4 @@
+'''
 from flask import render_template
 from app import app
 @app.route('/')
@@ -11,7 +12,7 @@ def index():
 	    "message":"hahahahah"
 	},
 	{
-	    "author":{"name":"Kik"},
+	    "author":{"name":"Jam"},
 	    "message":"nnnsssssss"
 	}
     ]
@@ -20,3 +21,14 @@ def index():
 	posts=posts,
 	title=title
 	)
+'''
+from flask import render_template
+from app import app
+from .forms import LoginForm
+
+@app.route('/login',methods = ['get','post'])
+def login():
+	form = LoginForm()
+	return render_template('login.html',
+		title = 'login in',
+		form = form)

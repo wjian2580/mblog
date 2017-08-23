@@ -1,15 +1,13 @@
-<!-- extend from base layout -->
 {% extends "base.html" %}
-
 {% block content %}
-<h1>Sign In</h1>
+<h1>Login in</h1>
 <form action="" method="post" name="login">
-    {{form.hidden_tag()}}
-    <p>
-        Please enter your OpenID:<br>
-        {{form.openid(size=80)}}<br>
-    </p>
-    <p>{{form.remember_me}} Remember Me</p>
-    <p><input type="submit" value="Sign In"></p>
+	{{ form.hidden_tag() }}
+<p>
+	Pls enter ur openid:<br>
+	{{form.openid(size=80)}}<br>
+</p>
+<p>{{form.remember_me()}} remember me</p>
+<p><input type="submit" name="submit" value="Login in"></p>
 </form>
 {% endblock %}
