@@ -1,5 +1,6 @@
 flask/*
 .idea/*
 *.pyc
+tem/*
 __pycache__/*
 !.gitignore
