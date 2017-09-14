@@ -1,0 +1,73 @@
+2017-09-13 23:31:25,058 INFO: microblog startup [in D:\microblog\app\__init__.py:40]
+2017-09-13 23:34:54,007 ERROR: Exception on /edit [POST] [in D:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.nickname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "D:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\microblog\flask\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\microblog\app\views.py", line 106, in edit
+    db.session.commit()
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 906, in commit
+    self.transaction.commit()
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2171, in flush
+    self._flush(objects)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2255, in _flush
+    flush_context.execute()
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 548, in execute
+    uow
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 737, in _emit_update_statements
+    execute(statement, multiparams)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\microblog\flask\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.nickname [SQL: 'UPDATE user SET nickname=?, about_me=? WHERE user.id = ?'] [parameters: ('Jian', 'haha....', 2)]

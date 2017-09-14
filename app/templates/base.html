@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <script src = "../static/jquery-3.2.1.js"></script>
     {% if title %}
-    <title>{{title}} - microblog</title>
+    <title>{{title}} - Jblog</title>
     {% else %}
-    <title>microblog</title>
+    <title>Jblog</title>
     {% endif %}
   </head>
   <body>
-    <div>Microblog: 
+    <div>Jblog:         
         <a href="{{ url_for('index') }}">主页</a>
         {% if g.user.is_authenticated %}
         | <a href="{{ url_for('logout') }}">注销</a>
         | <a href="{{url_for('user',nickname = g.user.nickname)}}">个人中心</a>
+        | <p>欢迎您：{{g.user.nickname}}</p>
         {% endif %}
     </div>
     <hr>

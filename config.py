@@ -8,8 +8,17 @@ CSRF_ENABLED = True
 SECRET_KEY = 'P@$$wr0d'
 
 OPENID_PROVIDERS = [
-    { 'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id' },
+    { 'name': 'StackExchange', 'url': 'https://openid.stackexchange.com' },
     { 'name': 'Yahoo', 'url': 'https://me.yahoo.com' },
     { 'name': 'AOL', 'url': 'http://openid.aol.com/<username>' },
     { 'name': 'Flickr', 'url': 'http://www.flickr.com/<username>' },
     { 'name': 'MyOpenID', 'url': 'https://www.myopenid.com' }]
+
+# mail server settings
+MAIL_SERVER = 'localhost'
+MAIL_PORT = 25
+MAIL_USERNAME = None
+MAIL_PASSWORD = None
+
+# administrator list
+ADMINS = ['501260495@qq.com','wjian2580@163.com']
