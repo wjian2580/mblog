@@ -1,3 +1,5 @@
+ctags.exe
+.tags
 tmp/*
 flask/*
 .idea/*
