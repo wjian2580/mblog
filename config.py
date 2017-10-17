@@ -15,10 +15,15 @@ OPENID_PROVIDERS = [
     { 'name': 'MyOpenID', 'url': 'https://www.myopenid.com' }]
 
 # mail server settings
-MAIL_SERVER = 'localhost'
-MAIL_PORT = 25
-MAIL_USERNAME = None
-MAIL_PASSWORD = None
+MAIL_SERVER = 'smtp.163.com'
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+MAIL_USERNAME = 'wjian2580@163.com'
+MAIL_PASSWORD = 'Wjian2580'
 
 # administrator list
-ADMINS = ['501260495@qq.com','wjian2580@163.com']
+ADMINS = ['wjian2580@163.com','wangjian0414@rayootech.com','501260495@qq.com']
+
+# 翻页：每页的博客数目
+POSTS_PER_PAGE = 10

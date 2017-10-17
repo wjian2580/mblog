@@ -27,3 +27,6 @@ class EditForm(FlaskForm):
             self.nickname.errors.append('昵称存在了哦，换一个试试吧~')
             return False
         return True
+
+class PostForm(FlaskForm):
+    post = StringField('post', validators=[DataRequired()])
