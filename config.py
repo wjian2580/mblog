@@ -20,7 +20,7 @@ MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
 MAIL_USERNAME = 'wjian2580@163.com'
-MAIL_PASSWORD = 'Wjian2580'
+MAIL_PASSWORD = ''
 
 # administrator list
 ADMINS = ['wjian2580@163.com','wangjian0414@rayootech.com','501260495@qq.com']
